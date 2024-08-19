@@ -51,7 +51,7 @@ function renderProductsGrid() {
 
         <div class="product-spacer"></div>
 
-        <div class="added-to-cart">
+        <div class="added-to-cart js-added-to-cart-${product.id}">
           <img src="images/icons/checkmark.png">
           Added
         </div>
@@ -72,17 +72,17 @@ function renderProductsGrid() {
     cart.forEach((cartItem) => {
       cartQuantity += cartItem.quantity;
     });
-
+    
     document.querySelector('.js-cart-quantity')
-      .innerHTML = cartQuantity;
+     .innerHTML = cartQuantity;
   }
 
   document.querySelectorAll('.js-add-to-cart')
-    .forEach((button) => {
-      button.addEventListener('click', () => {
-        const productId = button.dataset.productId;
-        addToCart(productId);
-        updateCartQuantity();
-      });
+  .forEach((button) => {
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
+      addToCart(productId);
+      updateCartQuantity();
     });
+  });
 }
