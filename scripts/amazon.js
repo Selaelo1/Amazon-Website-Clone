@@ -3,6 +3,7 @@ import {products, loadProducts} from './checkout/data/products.js';
 //import {formatCurrency} from '/utils/money.js';
 
 
+
 loadProducts(renderProductsGrid);
 
 function renderProductsGrid() {
